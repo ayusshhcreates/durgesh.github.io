@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durgesh Chandra Sharma — Content Writer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0e0e0e;
+    --paper: #f5f0e8;
+    --cream: #ede8dc;
+    --accent: #b8490a;
+    --muted: #6b6560;
+    --line: #ccc7bc;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  header {
+    padding: 80px 60px 60px;
+    border-bottom: 1px solid var(--line);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    line-height: 1.05;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+  }
+
+  .tagline {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 28px;
+  }
+
+  .bio {
+    font-size: 1.05rem;
+    max-width: 600px;
+    color: #3a3530;
+    line-height: 1.8;
+  }
+
+  .bio + .bio { margin-top: 14px; }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 60px 100px;
+  }
+
+  section {
+    padding-top: 64px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 48px;
+  }
+
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-pill {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 8px 18px;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    border-radius: 2px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .skill-pill:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  /* ── LINK GROUPS ── */
+  .link-group { margin-bottom: 40px; }
+  .link-group:last-child { margin-bottom: 0; }
+
+  .group-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .link-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .link-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .link-num {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 500;
+    min-width: 18px;
+    letter-spacing: 0.08em;
+  }
+
+  .link-list a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: border-color 0.2s, color 0.2s;
+    word-break: break-all;
+  }
+
+  .link-list a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ── PAGES GRID ── */
+  .pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .page-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s, transform 0.2s;
+    border-radius: 2px;
+  }
+
+  .page-card:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translateY(-2px);
+  }
+
+  .page-card .at { color: var(--accent); font-size: 1rem; }
+  .page-card:hover .at { color: #f5a070; }
+
+  /* ── NOTE BOX ── */
+  .note {
+    background: var(--cream);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 28px;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ── SAMPLES ── */
+  .sample-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .sample-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 24px;
+    text-decoration: none;
+    color: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .sample-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .sample-card .card-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .sample-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .linkedin-btn {
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    padding: 10px 22px;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .linkedin-btn:hover { background: var(--accent); }
+
+  @media (max-width: 640px) {
+    header, main { padding-left: 28px; padding-right: 28px; }
+    .sample-cards { grid-template-columns: 1fr; }
+    footer { padding: 32px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Portfolio</p>
+  <h1>Durgesh Chandra<br>Sharma</h1>
+  <p class="tagline">Content Writer &nbsp;·&nbsp; Scriptwriter &nbsp;·&nbsp; Content Strategist</p>
+  <p class="bio">Most of my work starts with a simple question: what is this business actually trying to say? Over the past year at Benchmark Group, I've written scripts, hooks, ads, and social content for everything from hotels and hospitals to jewellery, real estate, HR, and food brands. Different businesses, different voices, same job: finding the thing worth saying.</p>
+  <p class="bio" style="margin-top:16px; font-style:italic; color:var(--muted);">Selected writing and scripts below.</p>
+</header>
+
+<main>
+
+  <!-- SKILLS -->
+  <section>
+    <p class="section-label">Skills Snapshot</p>
+    <div class="skills-grid">
+      <span class="skill-pill">Short-form video scripts (Reels / Shorts)</span>
+      <span class="skill-pill">Copywriting &amp; ad scripts</span>
+      <span class="skill-pill">Long-form content (LinkedIn / brand storytelling)</span>
+      <span class="skill-pill">Content ideation &amp; strategy</span>
+      <span class="skill-pill">Trend analysis &amp; hook writing</span>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section>
+    <p class="section-label">Articles</p>
+    <div class="link-group">
+      <p class="group-title">Published Writing</p>
+      <ul class="link-list">
+        <li><span class="link-num">01</span><a href="https://qr.ae/pY3LsI" target="_blank">Quora — qr.ae/pY3LsI</a></li>
+        <li><span class="link-num">02</span><a href="https://medium.com/@WRITEFILMCREATE/the-art-of-losing-customers-5-mistakes-that-are-driving-your-customers-away-e0fde8fb690a" target="_blank">Medium — The Art of Losing Customers</a></li>
+        <li><span class="link-num">03</span><a href="https://www.linkedin.com/pulse/uncomfortable-questions-ai-raises-our-soft-skills-chandra-sharma-nxtkf" target="_blank">LinkedIn — The Uncomfortable Questions AI Raises About Our Soft Skills</a></li>
+        <li><span class="link-num">04</span><a href="https://substack.com/@durgeshxsharma9/p-203710728" target="_blank">Substack — Perfection is Dead Media</a></li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <p class="group-title">Blog Posts</p>
+      <ul class="link-list">
+        <li><span class="link-num">01</span><a href="https://www.benchmark.company/2025/04/18/the-weird-psychology-behind-why-people-dont-trust-your-brand/" target="_blank">The Weird Psychology Behind Why People Don't Trust Your Brand</a></li>
+        <li><span class="link-num">02</span><a href="https://www.benchmark.company/2025/10/16/best-diwali-campaign/" target="_blank">Best Diwali Campaign</a></li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <p class="group-title">Website Copy</p>
+      <ul class="link-list">
+        <li><span class="link-num">—</span><a href="https://vaikunthvillage.com/" target="_blank">vaikunthvillage.com</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- REELS / SCRIPTS -->
+  <section>
+    <p class="section-label">Reel Scripts</p>
+    <div class="link-group">
+      <p class="group-title">Real Estate</p>
+      <ul class="link-list">
+        <li><span class="link-num">01</span><a href="https://www.instagram.com/reel/DSZ32D6DR9K/" target="_blank">instagram.com/reel/DSZ32D6DR9K</a></li>
+        <li><span class="link-num">02</span><a href="https://www.instagram.com/reel/DTxavKogBlT/" target="_blank">instagram.com/reel/DTxavKogBlT</a></li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <p class="group-title">Café</p>
+      <ul class="link-list">
+        <li><span class="link-num">01</span><a href="https://www.instagram.com/reel/DKcCAAGstY7/" target="_blank">instagram.com/reel/DKcCAAGstY7</a></li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <p class="group-title">HR Consultancy</p>
+      <ul class="link-list">
+        <li><span class="link-num">01</span><a href="https://www.instagram.com/reel/DOgPMzykjyC/" target="_blank">instagram.com/reel/DOgPMzykjyC</a></li>
+        <li><span class="link-num">02</span><a href="https://www.instagram.com/reel/DM4B1Q8yleF/" target="_blank">instagram.com/reel/DM4B1Q8yleF</a></li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <p class="group-title">Jewellery</p>
+      <ul class="link-list">
+        <li><span class="link-num">01</span><a href="https://www.instagram.com/reel/DOJIYsYEtZd/" target="_blank">instagram.com/reel/DOJIYsYEtZd</a></li>
+        <li><span class="link-num">02</span><a href="https://www.instagram.com/reel/DLbq0qOow3P/" target="_blank">instagram.com/reel/DLbq0qOow3P</a></li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <p class="group-title">Creative</p>
+      <ul class="link-list">
+        <li><span class="link-num">01</span><a href="https://www.instagram.com/p/DKgnlEmvPN3/" target="_blank">instagram.com/p/DKgnlEmvPN3</a></li>
+      </ul>
+    </div>
+    <div class="note">Scripts are mine — actual video production required a separate creative team.</div>
+  </section>
+
+  <!-- PAGES MANAGED -->
+  <section>
+    <p class="section-label">Pages Managed</p>
+    <div class="link-group">
+      <p class="group-title">Featured Accounts</p>
+      <ul class="link-list">
+        <li><span class="link-num">—</span><a href="https://www.instagram.com/hotel_raj_imperial" target="_blank">@hotel_raj_imperial — hospitality</a></li>
+        <li><span class="link-num">—</span><a href="https://www.instagram.com/dr_rl_hospital" target="_blank">@dr_rl_hospital — healthcare</a></li>
+        <li><span class="link-num">—</span><a href="https://www.instagram.com/ashtvinayakarealties" target="_blank">@ashtvinayakarealties — real estate</a></li>
+        <li><span class="link-num">—</span><a href="https://www.instagram.com/narshingdaspoonamchandjeweller" target="_blank">@narshingdaspoonamchandjeweller — jewellery</a></li>
+        <li><span class="link-num">—</span><a href="https://www.instagram.com/kalpgaurav" target="_blank">@kalpgaurav — HR / recruitment</a></li>
+        <li><span class="link-num">—</span><a href="https://www.instagram.com/phanifoods.in" target="_blank">@phanifoods.in — food and beverage</a></li>
+      </ul>
+    </div>
+    <p class="note" style="margin-top:24px;">Also handled content for benchmarkgroupofficial, cosmetic.krafts, dr.ruchakashyap, benchmarkoneofficial, srvmraigarh, cariconzraipur, deepaksharmarealtor_, nareshtradersraipur, praindiapvtltd, dishacollege_raipur, and vbcshyamcity.</p>
+  </section>
+
+  <!-- SAMPLE WORK -->
+  <section>
+    <p class="section-label">Sample Work</p>
+    <div class="sample-cards">
+      <a class="sample-card" href="https://docs.google.com/document/d/1C-VMURkynwBCn2CWN-ZwKOgdUWVQhj5HFOL51Xs1bM4/edit" target="_blank">
+        <p class="card-label">Script Sample</p>
+        <h3>Written for / inspired by Raj Shamani</h3>
+      </a>
+      <a class="sample-card" href="https://docs.google.com/document/d/1eIYudqC29-3JyuXTfzed1Yg8FrCn13B29rMg0XZN-XM/edit" target="_blank">
+        <p class="card-label">Narrative Sample</p>
+        <h3>A Short Story Concept</h3>
+      </a>
+    </div>
+    <p class="note">More samples in progress — will be shared on completion.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Durgesh Chandra Sharma</p>
+  <a class="linkedin-btn" href="https://www.linkedin.com/in/durgesh-chandra-sharma-1b4280335" target="_blank">Connect on LinkedIn →</a>
+</footer>
+
+</body>
+</html>
